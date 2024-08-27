@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const reloadAction = () => {
-  console.log("to be done")
+  window.location.reload();
 }
 
 </script>
@@ -12,7 +12,7 @@ const reloadAction = () => {
       </template>
       <v-app-bar-title>Tire Change Booking App</v-app-bar-title>
       <template v-slot:append>
-        <v-btn size="x-large" icon="mdi-reload" @click.prevent="reloadAction"></v-btn>
+        <v-btn size="x-large" icon="mdi-reload" @click="reloadAction"></v-btn>
       </template>
     </v-app-bar>
   </v-card>

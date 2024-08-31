@@ -3,7 +3,7 @@ import axios, { type AxiosResponse } from 'axios';
 
 export default class BookingService {
   private API_URL = 'http://localhost:8080/api/v1/';
-  private LIST_DATA_URL = 'booking';
+  private LIST_DATA_URL = 'bookings';
   private BOOKING_DATA_URL = 'booking/book';
   private headers: Record<string, string> = {
     'Content-Type': 'application/json',

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useSnackbarStore } from '@/stores/snackbarStore'
-
 const snackbarStore = useSnackbarStore()
+
 </script>
 
 <template>

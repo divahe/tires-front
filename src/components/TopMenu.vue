@@ -1,6 +1,8 @@
 <script lang="ts" setup>
+import { useBookingStore } from '@/stores/bookingStore'
+const bookingStore = useBookingStore()
 const reloadAction = () => {
-  window.location.reload();
+ bookingStore.loadBookings()
 }
 
 </script>

@@ -1,11 +1,11 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import { useBookingDialogStore } from '@/stores/bookingDialogStore'
+import { useBookingStore } from '@/stores/bookingStore'
 import type { SnackbarState, Errors, BookingResponse } from '@/model/index'
 import dayjs from 'dayjs'
 
 export const useSnackbarStore = defineStore('snackbar', () => {
-  const bookingDialogStore = useBookingDialogStore()
+  const bookingStore = useBookingStore()
   const bookingSnackbar = ref<SnackbarState>({
     show: false,
     time: '',
@@ -21,10 +21,10 @@ export const useSnackbarStore = defineStore('snackbar', () => {
   })
 
   const setSuccessBookingMessage = (response: BookingResponse) => {
-    if (bookingDialogStore.submittedItem != null) {
+    if (bookingStore.submittedItem != null) {
       ;(bookingSnackbar.value.time = response.time
         ? dayjs(response.time).format('YYYY-MM-DD HH:mm')
-        : bookingDialogStore.submittedItem.timeString),
+        : bookingStore.submittedItem.timeString),
         (bookingSnackbar.value.name = response.mastery.name),
         (bookingSnackbar.value.address = response.mastery.address),
         (bookingSnackbar.value.info = response.info),
@@ -35,10 +35,10 @@ export const useSnackbarStore = defineStore('snackbar', () => {
   }
 
   const setErrorBookingMessage = (error: any) => {
-    if (bookingDialogStore.submittedItem != null) {
-      ;(bookingSnackbar.value.time = bookingDialogStore.submittedItem.timeString),
-        (bookingSnackbar.value.name = bookingDialogStore.submittedItem.name),
-        (bookingSnackbar.value.address = bookingDialogStore.submittedItem.address),
+    if (bookingStore.submittedItem != null) {
+      ;(bookingSnackbar.value.time = bookingStore.submittedItem.timeString),
+        (bookingSnackbar.value.name = bookingStore.submittedItem.name),
+        (bookingSnackbar.value.address = bookingStore.submittedItem.address),
         (bookingSnackbar.value.info = error.info),
         (bookingSnackbar.value.id = ''),
         (bookingSnackbar.value.type = 'error')

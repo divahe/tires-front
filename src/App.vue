@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import TopMenu from '@/components/TopMenu.vue'
-import TheSnackBar from '@/components/BookingSnackbar.vue'
 </script>
 
 <template>

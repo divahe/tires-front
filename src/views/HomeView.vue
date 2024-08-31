@@ -1,7 +1,11 @@
 <script setup lang="ts">
-import FrontPage from '../components/FrontPage.vue'
+import BookingTable from '@/components/BookingTable.vue'
+import BookingSnackBar from '@/components/BookingSnackbar.vue'
+import ListLoadingSnackBar from '@/components/ListLoadingSnackbar.vue'
 </script>
 
 <template>
-  <FrontPage />
+  <BookingSnackBar />
+  <ListLoadingSnackBar />
+  <BookingTable/>/>
 </template>

@@ -7,5 +7,5 @@ import ListLoadingSnackBar from '@/components/ListLoadingSnackbar.vue'
 <template>
   <BookingSnackBar />
   <ListLoadingSnackBar />
-  <BookingTable/>/>
+  <BookingTable/>
 </template>

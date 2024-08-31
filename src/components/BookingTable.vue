@@ -79,6 +79,7 @@ onMounted(bookingStore.loadBookings)
           type="date"
           label="Search period start"
           placeholder="Start"
+          @click.stop
         ></v-text-field>
         <v-text-field
           v-model="multiSearch['timeEnd']"
@@ -86,9 +87,10 @@ onMounted(bookingStore.loadBookings)
           type="date"
           label="Search period end"
           placeholder="End"
+          @click.stop
         ></v-text-field>
       </div>
-      <span>Time</span>
+      <span id="table-header">Time</span>
       <div @click.stop></div>
     </template>
     <template v-slot:[`header.name`]>
@@ -97,8 +99,9 @@ onMounted(bookingStore.loadBookings)
         class="pa"
         type="text"
         placeholder="Name"
+        @click.stop
       ></v-text-field>
-      <span>Name</span>
+      <span id="table-header">Name</span>
       <div @click.stop></div>
     </template>
     <template v-slot:[`header.address`]>
@@ -107,8 +110,9 @@ onMounted(bookingStore.loadBookings)
         class="pa"
         type="text"
         placeholder="Address"
+        @click.stop
       ></v-text-field>
-      <span>Address</span>
+      <span id="table-header">Address</span>
       <div @click.stop></div>
     </template>
     <template v-slot:[`header.carTypes`]>
@@ -117,8 +121,9 @@ onMounted(bookingStore.loadBookings)
         class="pa"
         type="text"
         placeholder="Car Types"
+        @click.stop
       ></v-text-field>
-      <span>Car Types</span>
+      <span id="table-header">Car Types</span>
       <div @click.stop></div>
     </template>
   </v-data-table>
@@ -135,20 +140,16 @@ onMounted(bookingStore.loadBookings)
   min-height: 1.5rem !important;
   padding-top: 0 !important;
 }
-#table-headers {
+#table-header {
   font-weight: 1000;
 }
 
 .small-datepicker {
-  /* width: 40%; */
   padding: 3px;
   flex: 1;
 }
 .flex-container {
   display: flex;
-  /* width: 50%; */
 }
-.selected-row {
-  background-color: #e0e0e0;
-}
+
 </style>

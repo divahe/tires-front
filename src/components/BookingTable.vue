@@ -131,14 +131,8 @@ onMounted(bookingStore.loadBookings)
   
 </template>
 <style scoped>
-.search-field {
-  --v-input-padding-top: 0;
-  --v-input-padding: 0;
-}
-.v-field__input {
-  padding-bottom: 0 !important;
-  min-height: 1.5rem !important;
-  padding-top: 0 !important;
+.v-input--density-default {
+  --v-input-padding-top: 1px;
 }
 #table-header {
   font-weight: 1000;

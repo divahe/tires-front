@@ -18,8 +18,6 @@ const submitBooking = async () => {
     const response = await bookingService.makeBooking(bookingRequest)
     if (response.data) {
       snackbarStore.setSuccessBookingMessage(response.data)
-    } else if (response.status == 0) {
-      console.log("GOTCHA")
     }
   } catch (error: any) {
     snackbarStore.setErrorBookingMessage(error)
@@ -53,8 +51,10 @@ const submitBooking = async () => {
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="primary" @click="bookingStore.closeDialog"> Discard </v-btn>
-        <v-btn color="primary" @click="submitBooking"> Submit </v-btn>
+        <v-btn data-test='discard' color="primary" @click="bookingStore.closeDialog"
+          >DISCARD</v-btn
+        >
+        <v-btn data-test='submit' color="primary" @click="submitBooking">SUBMIT</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>

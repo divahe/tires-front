@@ -18,9 +18,10 @@ const submitBooking = async () => {
     const response = await bookingService.makeBooking(bookingRequest)
     if (response.data) {
       snackbarStore.setSuccessBookingMessage(response.data)
+    } else if (response.status == 0) {
+      console.log("GOTCHA")
     }
   } catch (error: any) {
-    console.log(error)
     snackbarStore.setErrorBookingMessage(error)
   } finally {
     bookingStore.clearCache()

@@ -8,6 +8,7 @@ export default class BookingService {
   private headers: Record<string, string> = {
     'Content-Type': 'application/json',
   };
+  private timeout: number = 10000;
 
   private handleErrorResponse(error: any): {
     status: number;
@@ -26,7 +27,7 @@ export default class BookingService {
         console.error('API Error: No response received');
         return {
           status: 0,
-          error: 'No server response',
+          error: 'No server response, did you forgot to start the backend?',
         };
       } else {
         console.error('API Error: Request setup error');
@@ -39,7 +40,7 @@ export default class BookingService {
     console.error('Unexpected error:', error);
     return {
       status: 0,
-      error: 'An unexpected error occurred',
+      error: 'Unexpected error',
     };
   }
 
@@ -67,6 +68,7 @@ export default class BookingService {
     return this.handleRequest<BookingListResponse>(
       axios.get(this.API_URL + this.LIST_DATA_URL, {
         headers: this.headers,
+        timeout: this.timeout,
       })
     );
   };
@@ -81,6 +83,7 @@ export default class BookingService {
     return this.handleRequest<BookingResponse>(
       axios.put<BookingResponse>(this.API_URL + this.BOOKING_DATA_URL, bookingRequest, {
         headers: this.headers,
+        timeout: this.timeout,
       })
     );
   };

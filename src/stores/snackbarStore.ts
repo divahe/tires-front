@@ -48,6 +48,7 @@ export const useSnackbarStore = defineStore('snackbar', () => {
 
   const setListLoadingError = (errors: Errors) => {
     listLoadingError.value = {
+      ...listLoadingError.value,
       errors,
       show: true
     }

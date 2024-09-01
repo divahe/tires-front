@@ -48,6 +48,9 @@ const loadBookings = async () => {
   if (response.data?.errors) {
     snackbarStore.setListLoadingError(response.data?.errors)
   }
+  if (response.error) {
+    snackbarStore.setListLoadingError({Server: response.error})
+  }
 }
 
 const flattenBookings = (bookings: Booking[]) => {

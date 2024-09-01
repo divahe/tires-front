@@ -15,7 +15,7 @@ const item = {
   available: true,
   time: dayjs(),
   timeString: '2024-09-03 11:00',
-  name: 'london',
+  name: 'London',
   address: '1A Gunton Rd, London',
   carTypes: 'car'
 }

@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
-import { screen, render } from '@testing-library/vue'
+import { screen } from '@testing-library/vue'
 import TopMenu from '../TopMenu.vue'
 import { createTestingPinia } from '@pinia/testing'
 

@@ -1,35 +1,39 @@
 # tires-front
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- This is a simple demo app without user login that enables the users to book tire change times in different masteries.
+- Development server is running on `http://localhost:5173/`.
+- Project needs a backend server from `https://github.com/divahe/tires-backend.git`
+- NB: project needs more unit tests, whick were not added due to time shortage.
 
 ## Project Setup
+
+Ensure that you have the following tools installed on your system:
+
+- Node.js (version 20 or higher)
+- npm or Yarn
+
+Clone git repository:
+
+- [git clone https://github.com/divahe/tires-front]
+- cd tires-front
+
 
 ```sh
 npm install
 ```
+or 
 
-### Compile and Hot-Reload for Development
+```sh
+yarn install
+```
+Project starts with
 
 ```sh
 npm run dev
 ```
-
-### Type-Check, Compile and Minify for Production
-
+or
 ```sh
-npm run build
+yarn dev
 ```
 
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
